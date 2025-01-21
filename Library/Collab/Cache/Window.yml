@@ -13,61 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
-    m_Keys:
-    - .collabignore
-    - Assets/Atoms.meta
-    - Assets/Atoms/Hydrogen.prefab
-    - Assets/Atoms/Hydrogen.prefab.meta
-    - Assets/Electron_Field.cs
-    - Assets/Electron_Field.cs.meta
-    - Assets/Electrons.meta
-    - Assets/Electrons/electron.prefab
-    - Assets/Electrons/electron.prefab.meta
-    - Assets/Materials.meta
-    - Assets/Materials/Blue.mat
-    - Assets/Materials/Blue.mat.meta
-    - Assets/Materials/ElectronFieldMaterial.mat
-    - Assets/Materials/ElectronFieldMaterial.mat.meta
-    - Assets/Materials/Red.mat
-    - Assets/Materials/Red.mat.meta
-    - Assets/Orbital_View.cs
-    - Assets/Orbital_View.cs.meta
-    - Assets/Pipelines.meta
-    - Assets/Pipelines/UniversalRenderPipelineGlobalSettings.asset
-    - Assets/Pipelines/UniversalRenderPipelineGlobalSettings.asset.meta
-    - Assets/Scenes.meta
-    - Assets/Scenes/SampleScene.unity
-    - Assets/Scenes/SampleScene.unity.meta
-    - Assets/Shaders.meta
-    - Assets/Shaders/RayMarchingVolume.shader
-    - Assets/Shaders/RayMarchingVolume.shader.meta
-    - Assets/script.meta
-    - Assets/script/Electron_Circle.cs
-    - Assets/script/Electron_Circle.cs.meta
-    - Assets/script/SpawnElectrons.cs
-    - Assets/script/SpawnElectrons.cs.meta
-    - Packages/manifest.json
-    - Packages/packages-lock.json
-    - ProjectSettings/AudioManager.asset
-    - ProjectSettings/ClusterInputManager.asset
-    - ProjectSettings/DynamicsManager.asset
-    - ProjectSettings/EditorBuildSettings.asset
-    - ProjectSettings/EditorSettings.asset
-    - ProjectSettings/GraphicsSettings.asset
-    - ProjectSettings/InputManager.asset
-    - ProjectSettings/NavMeshAreas.asset
-    - ProjectSettings/Physics2DSettings.asset
-    - ProjectSettings/PresetManager.asset
-    - ProjectSettings/ProjectSettings.asset
-    - ProjectSettings/ProjectVersion.txt
-    - ProjectSettings/QualitySettings.asset
-    - ProjectSettings/TagManager.asset
-    - ProjectSettings/TimeManager.asset
-    - ProjectSettings/UnityConnectSettings.asset
-    - ProjectSettings/VFXManager.asset
-    - ProjectSettings/VersionControlSettings.asset
-    - 
-    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Keys: []
+    m_Values: 
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
