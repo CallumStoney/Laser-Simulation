@@ -36,7 +36,7 @@ public class SpawnElectrons : MonoBehaviour
         //change position of electrons
         for (int i = 1; i <= electrons.Count; i++)
         {
-            electrons[i - 1].GetComponent<Electron_Circle>().n = i; //assign the electron to its corresponding orbital
+            electrons[i - 1].GetComponent<Electron_Circle>().n = (i + 1) / 2; //assign the electron to its corresponding orbital
         }
     }
 

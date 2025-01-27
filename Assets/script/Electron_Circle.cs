@@ -12,7 +12,7 @@ public class Electron_Circle : MonoBehaviour
 
     void Start()
     {
-        orbital = GetComponentInParent<SpawnElectrons>().orbitals[(n - 1) / 2]; //gets orbital corresponding to atomic number n
+        orbital = GetComponentInParent<SpawnElectrons>().orbitals[n - 1]; //gets orbital corresponding to atomic number n
         orbitalMeshFilter = orbital.GetComponent<MeshFilter>(); //gets the mesh filter of the orbital
     }
 
