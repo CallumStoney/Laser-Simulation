@@ -22,6 +22,7 @@ public class SpawnElectrons : MonoBehaviour
         {
             GameObject orbitalAdd = Instantiate(orbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
             orbitalAdd.transform.SetParent(this.transform); //set orbital as child of the nucleus
+            orbitalAdd.transform.localScale = new Vector3((i + 1)*3, (i + 1)*3, (i + 1)*3);
             orbitals.Add(orbitalAdd); //add orbital to the list
         }
 

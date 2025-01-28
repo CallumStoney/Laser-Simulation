@@ -2,7 +2,7 @@ Shader "Custom/ElectronCloud"
 {
     Properties
     {
-        _MainColor("Cloud Color", Color) = (0.0, 0.5, 1.0, 1.0) //comment: color of the electron cloud
+        _MainColor("Cloud Color", Color) = (1.0, 1.0, 1.0, 1.0) //comment: color of the electron cloud
         _Density("Density", Float) = 1.0 //comment: maximum density of the cloud
         _Radius("Radius", Float) = 1.0 //comment: size of the electron cloud
         _Exponent("Falloff Exponent", Float) = 2.0 //comment: controls sharpness of the cloud edges
@@ -50,9 +50,10 @@ Shader "Custom/ElectronCloud"
 
             float ElectronCloudDensity(float3 pos, float3 parentPos, float radius, float exponent)
             {
-                float dist = length(pos - parentPos); //comment: distance from the parent object
-                float normalizedDist = dist / radius; //comment: normalize distance by the cloud radius
-                return exp(-pow(normalizedDist, exponent)); //comment: falloff calculation
+                //float dist = length(pos - parentPos); //comment: distance from the parent object
+                //float normalizedDist = dist / radius; //comment: normalize distance by the cloud radius
+                //return exp(-pow(normalizedDist, exponent)); //comment: falloff calculation
+                return 0.3;
             }
 
             fixed4 frag(v2f i) : SV_Target
