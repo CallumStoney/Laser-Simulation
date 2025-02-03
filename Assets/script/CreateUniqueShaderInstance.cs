@@ -11,6 +11,13 @@ public class CreateUniqueShaderInstance : MonoBehaviour
         // Clone the base material to create a unique instance 
         instanceMaterial = new Material(baseMaterial);
         GetComponent<Renderer>().material = instanceMaterial;
+        Color cloudColor = GetComponent<Renderer>().material.GetColor("_MainColor");
+        if(this.name == "2pOrbital(Clone)")
+            GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.0f, 1.0f));
+        else if(this.name == "2sOrbital(Clone)")
+            GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.5f, 0.0f));
+        else if(this.name == "1sOrbital(Clone)")
+            GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.1f, 0.0f));
 
         // Assume this script is attached to a child object
         parentTransform = transform.parent;
