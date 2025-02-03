@@ -9,7 +9,9 @@ public class SpawnElectrons : MonoBehaviour
     List<GameObject> electrons; //list to hold electron objects
 
     public GameObject electron; //reference to the electron prefab
-    public GameObject orbital; //reference to the orbital prefab
+    public GameObject twoPOrbital; //reference to the orbital prefab
+    public GameObject twoSOrbital; //reference to the orbital prefab
+    public GameObject oneSOrbital; //reference to the orbital prefab
 
     void Start()
     {
@@ -20,9 +22,14 @@ public class SpawnElectrons : MonoBehaviour
         //instantiate orbitals based on the number of electrons
         for (int i = 0; i < ((int)numElectrons + 1) / 2; i++)
         {
-            GameObject orbitalAdd = Instantiate(orbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
+            GameObject orbitalAdd = null;
+            if (i == 0)
+                orbitalAdd = Instantiate(oneSOrbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
+            if (i == 1)
+                orbitalAdd = Instantiate(twoSOrbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
+            if (i == 2)
+                orbitalAdd = Instantiate(twoPOrbital, new Vector3(0, 0, 0), new Quaternion(0,75,50,50)); //create an orbital at position (0,0,0)
             orbitalAdd.transform.SetParent(this.transform); //set orbital as child of the nucleus
-            orbitalAdd.transform.localScale = new Vector3((i + 1)*3, (i + 1)*3, (i + 1)*3);
             orbitals.Add(orbitalAdd); //add orbital to the list
         }
 
