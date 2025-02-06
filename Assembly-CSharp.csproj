@@ -47,6 +47,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ThreeDMovement.cs" />
+     <Compile Include="Assets\script\ThreeDMovement.cs" />
      <Compile Include="Assets\script\CreateUniqueShaderInstance.cs" />
      <Compile Include="Assets\script\SpawnElectrons.cs" />
      <Compile Include="Assets\script\Electron_Circle.cs" />

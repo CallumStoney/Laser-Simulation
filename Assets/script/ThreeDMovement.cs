@@ -5,6 +5,7 @@ using UnityEngine;
 public class ThreeDMovement : MonoBehaviour
 {
     float speed = 5f; //base movement speed
+    Vector3 mouseRotation;
 
     void Start()
     {
@@ -34,10 +35,12 @@ public class ThreeDMovement : MonoBehaviour
 
 
         //rotation
+        mouseRotation = Input.mousePosition;
         if (Input.GetMouseButton(1))
         {
-            Vector3 mousePos = Input.mousePosition;
-            transform.rotation = ;
+            Debug.Log(Screen.width / 2);
+            if (transform.position.x > Screen.width / 2)
+                Camera.main.transform.rotation = Quaternion.Euler(30, 30, 0);
         }
     }
 }
