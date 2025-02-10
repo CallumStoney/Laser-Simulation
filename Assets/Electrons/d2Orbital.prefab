@@ -1,12 +1,16 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3150845435949264282
+--- !u!1001 &6609830999435962582
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 870509500945765261, guid: 498011aa451e5b14e91bab54a355703f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: d22539fe6ba6fed45acd89cd1b5b7c27, type: 3}
     - target: {fileID: 2594839774554301191, guid: 498011aa451e5b14e91bab54a355703f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -55,5 +59,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: d2Orbital
       objectReference: {fileID: 0}
+    - target: {fileID: 8101200142544450479, guid: 498011aa451e5b14e91bab54a355703f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: d22539fe6ba6fed45acd89cd1b5b7c27, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 498011aa451e5b14e91bab54a355703f, type: 3}

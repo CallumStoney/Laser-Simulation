@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 40568761389378276, guid: 973ab523c201f11489064d053c1406d2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -2432090755550338912, guid: d22539fe6ba6fed45acd89cd1b5b7c27, type: 3}
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 2122449473503975403, guid: 973ab523c201f11489064d053c1406d2, type: 3}
       propertyPath: m_Name
       value: sOrbital
@@ -74,6 +74,6 @@ PrefabInstance:
     - target: {fileID: 9000923578255428294, guid: 973ab523c201f11489064d053c1406d2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -2432090755550338912, guid: d22539fe6ba6fed45acd89cd1b5b7c27, type: 3}
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 973ab523c201f11489064d053c1406d2, type: 3}
