@@ -7,7 +7,7 @@ public class Electron_Circle : MonoBehaviour
     public int n = 0; //atomic number
 
     //orbital
-    GameObject orbital; //orbital object corresponding to the electron
+    public GameObject orbital; //orbital object corresponding to the electron
     MeshFilter orbitalMeshFilter; //mesh filter of the orbital
 
     void Start()

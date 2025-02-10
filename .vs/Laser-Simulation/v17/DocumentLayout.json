@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\assets\\script\\spawnelectrons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|c:\\users\\callu\\laser simulation\\laser-simulation\\assets\\script\\spawnelectrons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\spawnelectrons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,12 +11,16 @@
       "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\electron_circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\script\\CreateUniqueShaderInstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:Assets\\script\\CreateUniqueShaderInstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\assets\\shaders\\raymarchingvolume.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\shaders\\raymarchingvolume.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|c:\\users\\callu\\laser simulation\\laser-simulation\\assets\\shaders\\raymarchingvolume.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\shaders\\raymarchingvolume.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|c:\\users\\callu\\laser simulation\\laser-simulation\\assets\\script\\threedmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\threedmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\script\\CreateUniqueShaderInstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:Assets\\script\\CreateUniqueShaderInstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +30,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "ThreeDMovement.cs",
+              "DocumentMoniker": "C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\script\\ThreeDMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\script\\ThreeDMovement.cs",
+              "ToolTip": "C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\script\\ThreeDMovement.cs",
+              "RelativeToolTip": "Assets\\script\\ThreeDMovement.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T06:17:40.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "RayMarchingVolume.shader",
               "DocumentMoniker": "C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\Shaders\\RayMarchingVolume.shader",
               "RelativeDocumentMoniker": "Assets\\Shaders\\RayMarchingVolume.shader",
@@ -49,7 +70,7 @@
               "RelativeDocumentMoniker": "Assets\\script\\SpawnElectrons.cs",
               "ToolTip": "C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\script\\SpawnElectrons.cs",
               "RelativeToolTip": "Assets\\script\\SpawnElectrons.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAACIAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwC8AAACWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-26T22:49:19.467Z",
               "EditorCaption": ""
@@ -62,20 +83,20 @@
               "RelativeDocumentMoniker": "Assets\\script\\Electron_Circle.cs",
               "ToolTip": "C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\script\\Electron_Circle.cs",
               "RelativeToolTip": "Assets\\script\\Electron_Circle.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-26T22:49:19.568Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CreateUniqueShaderInstance.cs",
               "DocumentMoniker": "C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\script\\CreateUniqueShaderInstance.cs",
               "RelativeDocumentMoniker": "Assets\\script\\CreateUniqueShaderInstance.cs",
               "ToolTip": "C:\\Users\\callu\\Laser Simulation\\Laser-Simulation\\Assets\\script\\CreateUniqueShaderInstance.cs",
               "RelativeToolTip": "Assets\\script\\CreateUniqueShaderInstance.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAwAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-26T22:49:19.569Z",
               "EditorCaption": ""

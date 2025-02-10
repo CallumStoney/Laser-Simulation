@@ -12,11 +12,11 @@ public class CreateUniqueShaderInstance : MonoBehaviour
         instanceMaterial = new Material(baseMaterial);
         GetComponent<Renderer>().material = instanceMaterial;
         Color cloudColor = GetComponent<Renderer>().material.GetColor("_MainColor");
-        if(this.name == "2pOrbital(Clone)")
+        if(this.name == "orbital 1")
             GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.0f, 1.0f));
-        else if(this.name == "2sOrbital(Clone)")
+        else if(this.name == "orbital 2")
             GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.5f, 0.0f));
-        else if(this.name == "1sOrbital(Clone)")
+        else if(this.name == "orbital 3")
             GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.1f, 0.0f));
 
         // Assume this script is attached to a child object
