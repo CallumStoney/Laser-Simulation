@@ -353,7 +353,7 @@ PrefabInstance:
       objectReference: {fileID: 3539344760636624648, guid: a8fe732dfaa84854a8c34bb20537e94d, type: 3}
     - target: {fileID: 7553913301933142347, guid: 12cd054c882190f49a85add661d013ba, type: 3}
       propertyPath: numElectrons
-      value: 19
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8364460003812264773, guid: 12cd054c882190f49a85add661d013ba, type: 3}
       propertyPath: m_Mesh

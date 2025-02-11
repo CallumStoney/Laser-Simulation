@@ -34,6 +34,14 @@ public class CreateUniqueShaderInstance : MonoBehaviour
             GetComponent<Renderer>().material.SetColor("_MainColor", new Color(0.0f, 0.0f, 1.0f));
         else if (this.name == "orbital 11")
             GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.0f, 1.0f));
+        else if (this.name == "orbital 12")
+            GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.0f, 1.0f));
+        else if (this.name == "orbital 13")
+            GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.0f, 1.0f));
+        else if (this.name == "orbital 14")
+            GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.0f, 1.0f));
+        else if (this.name == "orbital 15")
+            GetComponent<Renderer>().material.SetColor("_MainColor", new Color(1.0f, 0.0f, 1.0f));
 
         // Assume this script is attached to a child object
         parentTransform = transform.parent;

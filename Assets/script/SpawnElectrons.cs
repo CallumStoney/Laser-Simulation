@@ -74,7 +74,31 @@ public class SpawnElectrons : MonoBehaviour
             }
             if (i == 11)
             {
-                orbitalAdd = Instantiate(d1Orbital, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 45)); //create an orbital at position (0,0,0)
+                orbitalAdd = Instantiate(d1Orbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
+                orbitalAdd.transform.rotation = Quaternion.Euler(45f,90f,0f);
+                orbitalAdd.transform.localScale = new Vector3(8, 8, 8);
+            }
+            if (i == 12)
+            {
+                orbitalAdd = Instantiate(d1Orbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
+                orbitalAdd.transform.rotation = Quaternion.Euler(45f, 0f, 0f);
+                orbitalAdd.transform.localScale = new Vector3(8, 8, 8);
+            }
+            if (i == 13)
+            {
+                orbitalAdd = Instantiate(d2Orbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
+                orbitalAdd.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+                orbitalAdd.transform.localScale = new Vector3(8, 8, 8);
+            }
+            if (i == 14)
+            {
+                orbitalAdd = Instantiate(d1Orbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
+                orbitalAdd.transform.rotation = Quaternion.Euler(0f, 45f, 90f);
+                orbitalAdd.transform.localScale = new Vector3(8, 8, 8);
+            }
+            if (i == 15)
+            {
+                orbitalAdd = Instantiate(d1Orbital, new Vector3(0, 0, 0), Quaternion.identity); //create an orbital at position (0,0,0)
                 orbitalAdd.transform.localScale = new Vector3(8, 8, 8);
             }
             orbitalAdd.name = "orbital " + i;
