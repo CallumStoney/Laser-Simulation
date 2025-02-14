@@ -51,7 +51,7 @@
      <Compile Include="Assets\script\CreateUniqueShaderInstance.cs" />
      <Compile Include="Assets\script\SpawnElectrons.cs" />
      <Compile Include="Assets\script\photonMovement.cs" />
-     <Compile Include="Assets\Spawn Atoms.cs" />
+     <Compile Include="Assets\script\SpawnAtom.cs" />
      <Compile Include="Assets\script\Electron_Circle.cs" />
      <None Include="Assets\Shaders\RayMarchingVolume.shader" />
  <Reference Include="UnityEngine">
