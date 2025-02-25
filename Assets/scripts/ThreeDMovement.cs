@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThreeDMovement : MonoBehaviour
 {
     //movement
-    float speed = 10f; //base movement speed
+    float speed = 30f; //base movement speed
     float sprintSpeed = 20f; //"sprint" movement speed
     bool isHeld = false;
 
@@ -18,7 +18,9 @@ public class ThreeDMovement : MonoBehaviour
 
     void Start()
     {
-        
+        Camera camera = Camera.main;
+
+        currentTurn = new Vector3(camera.transform.rotation.x, camera.transform.rotation.y, camera.transform.rotation.z);
     }
 
     void Update()
@@ -85,14 +87,18 @@ public class ThreeDMovement : MonoBehaviour
         //acceleration
         if (isHeld)
         {
-            speed *= (speed * 1.000000000001f);
+            speed += (speed * 0.005f);
+            if (speed >= 500f)
+            {
+                speed = 500f;
+            }
             sprintSpeed = speed * 2f;
         }
         else
         {
             speed = 10f;
             sprintSpeed = 20f;
-        }
+        } 
         
     }
 }

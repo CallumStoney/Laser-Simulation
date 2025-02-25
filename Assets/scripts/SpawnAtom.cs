@@ -8,7 +8,7 @@ public class SpawnAtom : MonoBehaviour
     void Start()
     {
         //SpawnNumAtoms(30); //30 max electrons
-        SpawnSpecificAtom(24, 20);
+        SpawnSpecificAtom(24, 27, 50);
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class SpawnAtom : MonoBehaviour
         }
     }
 
-    private void SpawnSpecificAtom(int num, int amount)
+    private void SpawnSpecificAtom(int numElectrons, int amount, int diameter)
     {
         // Calculate how many atoms should be in each dimension (X, Y, Z)
         int numAtomsPerDimension = Mathf.CeilToInt(Mathf.Pow(amount, 1f / 3f));
@@ -39,13 +39,13 @@ public class SpawnAtom : MonoBehaviour
             int z = i / (numAtomsPerDimension * numAtomsPerDimension);
 
             // Calculate the actual position with 40 units of spacing between atoms
-            Vector3 position = new Vector3(x * 40, y * 40, z * 40);
+            Vector3 position = new Vector3(x * diameter, y * diameter, z * diameter);
 
             // Instantiate the atom at the calculated position
             GameObject newAtom = Instantiate(atom, position, Quaternion.identity);
 
             // Set the number of electrons
-            newAtom.GetComponent<SpawnElectrons>().numElectrons = num;
+            newAtom.GetComponent<SpawnElectrons>().numElectrons = numElectrons;
         }
     }
 }

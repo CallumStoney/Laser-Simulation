@@ -47,12 +47,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\script\ThreeDMovement.cs" />
-     <Compile Include="Assets\script\CreateUniqueShaderInstance.cs" />
-     <Compile Include="Assets\script\SpawnElectrons.cs" />
-     <Compile Include="Assets\script\photonMovement.cs" />
-     <Compile Include="Assets\script\SpawnAtom.cs" />
-     <Compile Include="Assets\script\Electron_Circle.cs" />
+     <Compile Include="Assets\scripts\ThreeDMovement.cs" />
+     <Compile Include="Assets\scripts\CreateUniqueShaderInstance.cs" />
+     <Compile Include="Assets\scripts\SpawnElectrons.cs" />
+     <Compile Include="Assets\scripts\SpawnPhotons.cs" />
+     <Compile Include="Assets\scripts\photonMovement.cs" />
+     <Compile Include="Assets\scripts\SpawnAtom.cs" />
+     <Compile Include="Assets\scripts\Electron_Circle.cs" />
      <None Include="Assets\Shaders\RayMarchingVolume.shader" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
