@@ -7,8 +7,8 @@ public class SpawnAtom : MonoBehaviour
     public GameObject atom;
     void Start()
     {
-        //SpawnNumAtoms(30); //30 max electrons
-        SpawnSpecificAtom(24, 27, 50);
+        //SpawnNumAtomsRow(30); //30 max electrons
+        SpawnSpecificAtom(24, 27, 46);
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class SpawnAtom : MonoBehaviour
     {
 
     }
-    private void SpawnNumAtoms(int numAtoms)
+    private void SpawnNumAtomsRow(int numAtoms)
     {
         for (int i = 1; i < numAtoms; i++)
         {

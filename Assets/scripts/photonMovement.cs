@@ -5,7 +5,7 @@ using UnityEngine;
 public class photonMovement : MonoBehaviour
 {
     const float SPEED = 299792458f; // Speed of light in meters per second
-    const float SPEED_MULTIPLIER = 0.0000005f; // Much slower sub-light speed multiplier for realism
+    const float SPEED_MULTIPLIER = 0.000005f; // Much slower sub-light speed multiplier for realism
     public Vector3 direction; // Direction of photon movement
     public Rigidbody rb; // Rigidbody for movement
     public Collider photonCollider; // Collider of the photon (for detecting collision with electron collider)
@@ -13,7 +13,7 @@ public class photonMovement : MonoBehaviour
     void Start()
     {
         // Randomly set photon direction (normalized) to simulate random emission
-        direction = Random.onUnitSphere; // Random direction in 3D space
+        //direction = Random.onUnitSphere; // Random direction in 3D space
         rb.velocity = direction * SPEED * SPEED_MULTIPLIER; // Set initial velocity
     }
 
@@ -33,13 +33,18 @@ public class photonMovement : MonoBehaviour
                 AbsorbPhoton();
             }
         }
+
+        if (Mathf.Abs(transform.position.x) > 1000 || Mathf.Abs(transform.position.y) > 1000 || Mathf.Abs(transform.position.z) > 1000)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Simulate photon absorption (can add more behavior here)
     void AbsorbPhoton()
     {
         // Handle photon absorption logic (e.g., trigger electron excitation)
-        Debug.Log("Photon absorbed by electron at position: " + transform.position);
+        Debug.Log("Photon absorbed by electron");
 
         // Destroy photon after absorption
         Destroy(this.gameObject);
