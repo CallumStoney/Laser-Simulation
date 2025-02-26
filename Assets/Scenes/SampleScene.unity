@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photon: {fileID: 7108553308596882829, guid: ef4aa45b8dc04d84e9e2855b70d00d1f, type: 3}
+  spawnInterval: 0.1
 --- !u!1 &197808056
 GameObject:
   m_ObjectHideFlags: 0
