@@ -20,7 +20,8 @@ public class ThreeDMovement : MonoBehaviour
     {
         Camera camera = Camera.main;
 
-        currentTurn = new Vector3(camera.transform.rotation.x, camera.transform.rotation.y, camera.transform.rotation.z);
+        Quaternion cameraRotation = camera.transform.rotation;
+        displayTurn = new Vector3(cameraRotation.x, cameraRotation.y, 0f);
     }
 
     void Update()
