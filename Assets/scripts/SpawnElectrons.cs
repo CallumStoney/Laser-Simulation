@@ -23,7 +23,7 @@ public class SpawnElectrons : MonoBehaviour
         float amountOfOrbitals = AmountOfOrbitals(numElectrons);
 
         //instantiate orbitals based on the number of electrons
-        for (int i = 1; i <= amountOfOrbitals; i++)
+        for (int i = 1; i <= (amountOfOrbitals + 1); i++)
         {
             GameObject orbitalAdd = null;
             if (i == 1)
@@ -104,6 +104,11 @@ public class SpawnElectrons : MonoBehaviour
             orbitalAdd.name = "orbital " + i;
             orbitalAdd.transform.SetParent(this.transform); //set orbital as child of the nucleus
             orbitals.Add(orbitalAdd); //add orbital to the list
+
+            if (i == (amountOfOrbitals + 1))
+            {
+                orbitalAdd.SetActive(false);
+            }
         }
 
         //add electrons to list and create them
@@ -128,9 +133,11 @@ public class SpawnElectrons : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            orbitals[orbitals.Count - 1].SetActive(true);
+        }
     }
-
     private float AmountOfOrbitals(float electrons)
     {
         //Hunds law

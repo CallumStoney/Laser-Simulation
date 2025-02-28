@@ -8,7 +8,7 @@ public class SpawnAtom : MonoBehaviour
     void Start()
     {
         //SpawnNumAtomsRow(30); //30 max electrons
-        SpawnSpecificAtom(24, 27, 46);
+        SpawnSpecificAtom(2, 27, 46);
     }
 
     // Update is called once per frame
