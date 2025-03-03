@@ -5,47 +5,40 @@ using UnityEngine;
 public class SpawnAtom : MonoBehaviour
 {
     public GameObject atom;
+
     void Start()
     {
-        //SpawnNumAtomsRow(30); //30 max electrons
-        SpawnSpecificAtom(2, 27, 46);
+        // Example: Start position and length
+        SpawnSpecificAtom(24, 100, 46, 10, transform.position);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SpawnSpecificAtom(int numElectrons, int amount, int diameter, int length, Vector3 startingPosition)
     {
+        int numAtomsPerLayer = 9; // A full 3x3 layer contains 9 atoms
+        int fullLayers = amount / numAtomsPerLayer; // Number of complete 3x3 layers
+        int remainingAtoms = amount % numAtomsPerLayer; // Atoms left after full layers
 
-    }
-    private void SpawnNumAtomsRow(int numAtoms)
-    {
-        for (int i = 1; i < numAtoms; i++)
+        int totalLayers = Mathf.Min(fullLayers + (remainingAtoms > 0 ? 1 : 0), length); // Limit layers to 'length'
+        int placedAtoms = 0; // Track number of atoms placed
+
+        for (int z = 0; z < totalLayers; z++)
         {
-            GameObject newAtom = Instantiate(atom, new Vector3((i - 1) * (2f * (i - 1)), 0, 0), Quaternion.identity);
-            newAtom.GetComponent<SpawnElectrons>().numElectrons = i;
-        }
-    }
+            int atomsInLayer = (z < fullLayers) ? numAtomsPerLayer : remainingAtoms; // Full layers get 9, last layer gets the remaining
 
-    private void SpawnSpecificAtom(int numElectrons, int amount, int diameter)
-    {
-        // Calculate how many atoms should be in each dimension (X, Y, Z)
-        int numAtomsPerDimension = Mathf.CeilToInt(Mathf.Pow(amount, 1f / 3f));
+            for (int i = 0; i < atomsInLayer; i++)
+            {
+                int x = i % 3; // X position in 3x3 grid
+                int y = i / 3; // Y position in 3x3 grid
 
-        // Iterate through all the atoms and place them in a cube shape
-        for (int i = 0; i < amount; i++)
-        {
-            // Calculate the x, y, z position in the grid
-            int x = i % numAtomsPerDimension;
-            int y = (i / numAtomsPerDimension) % numAtomsPerDimension;
-            int z = i / (numAtomsPerDimension * numAtomsPerDimension);
+                Vector3 position = startingPosition + new Vector3(x * diameter, y * diameter, z * diameter);
 
-            // Calculate the actual position with 40 units of spacing between atoms
-            Vector3 position = new Vector3(x * diameter, y * diameter, z * diameter);
+                GameObject newAtom = Instantiate(atom, position, Quaternion.identity, this.transform); // Set parent to this object
 
-            // Instantiate the atom at the calculated position
-            GameObject newAtom = Instantiate(atom, position, Quaternion.identity);
+                newAtom.GetComponent<SpawnElectrons>().numElectrons = numElectrons;
 
-            // Set the number of electrons
-            newAtom.GetComponent<SpawnElectrons>().numElectrons = numElectrons;
+                placedAtoms++;
+                if (placedAtoms >= amount) return; // Stop when all atoms are placed
+            }
         }
     }
 }
