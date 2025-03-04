@@ -11,9 +11,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 804863055340549537, guid: 973ab523c201f11489064d053c1406d2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2122449473503975403, guid: 973ab523c201f11489064d053c1406d2, type: 3}
       propertyPath: m_Name
       value: sOrbital
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122449473503975403, guid: 973ab523c201f11489064d053c1406d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6124797154553690700, guid: 973ab523c201f11489064d053c1406d2, type: 3}
       propertyPath: m_RootOrder
@@ -70,6 +78,10 @@ PrefabInstance:
     - target: {fileID: 6124797154553690700, guid: 973ab523c201f11489064d053c1406d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860099748150926415, guid: 973ab523c201f11489064d053c1406d2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000923578255428294, guid: 973ab523c201f11489064d053c1406d2, type: 3}
       propertyPath: m_Mesh
