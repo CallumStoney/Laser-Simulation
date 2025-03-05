@@ -3751,7 +3751,7 @@ MonoBehaviour:
   pOrbital: {fileID: 2122449473503975403, guid: 973ab523c201f11489064d053c1406d2, type: 3}
   SOrbital: {fileID: 7892957488289975968, guid: 498011aa451e5b14e91bab54a355703f, type: 3}
   d1Orbital: {fileID: 3724426151112191374, guid: 159a97a9353367349a9a876959fe7161, type: 3}
-  d2Orbital: {fileID: 3905673394610660982, guid: 3676e1c6b1f71e84ca7c30ad21f5d2a8, type: 3}
+  d2Orbital: {fileID: 683449259731742737, guid: 3676e1c6b1f71e84ca7c30ad21f5d2a8, type: 3}
 --- !u!135 &8364460003812264779
 SphereCollider:
   m_ObjectHideFlags: 0

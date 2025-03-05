@@ -16,6 +16,12 @@ public class ThreeDMovement : MonoBehaviour
     Vector3 displayTurn = new Vector3(0f, 0f, 0f);
     Vector3 initalTurn = Vector3.zero;
 
+    //scroll
+    public Camera camera; // Reference to the camera
+    public float zoomSpeed = 10f; // How fast the camera zooms in and out
+    public float scrollCount = 0f;
+
+
     void Start()
     {
         Camera camera = Camera.main;
@@ -99,7 +105,30 @@ public class ThreeDMovement : MonoBehaviour
         {
             speed = 10f;
             sprintSpeed = 20f;
-        } 
-        
+        }
+
+
+        //zoom in and out of different scenes
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        if (scroll != 0)
+        {
+            if (scroll > 0)
+            {
+                scrollCount++;
+            }
+            else 
+            {
+                scrollCount--;
+            }
+
+            // Ensure the camera stays within the specified distance range
+            if(scrollCount < 5 || scrollCount > -5)
+            {
+                // Move the camera along its z-axis to zoom in and out
+                camera.transform.position += camera.transform.forward * scroll * zoomSpeed;
+            }
+        }
+
     }
 }
