@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class SpawnAtom : MonoBehaviour
 {
+
+    //atom spawning
     public GameObject atom;
+    public int numElectrons;
+    public int amountAtoms;
+    public int atomDiameter;
+    public int maxLength;
 
     void Start()
     {
         // Example: Start position and length
-        SpawnSpecificAtom(24, 100, 46, 10, transform.position);
+        SpawnSpecificAtom(numElectrons, amountAtoms, atomDiameter, maxLength, transform.position);
     }
 
     private void SpawnSpecificAtom(int numElectrons, int amount, int diameter, int length, Vector3 startingPosition)
@@ -32,9 +38,11 @@ public class SpawnAtom : MonoBehaviour
 
                 Vector3 position = startingPosition + new Vector3(x * diameter, y * diameter, z * diameter);
 
-                GameObject newAtom = Instantiate(atom, position, Quaternion.identity, this.transform); // Set parent to this object
 
+                //change depending on atom type
+                GameObject newAtom = Instantiate(atom, position, Quaternion.identity, this.transform); // Set parent to this object
                 newAtom.GetComponent<SpawnElectrons>().numElectrons = numElectrons;
+                //
 
                 placedAtoms++;
                 if (placedAtoms >= amount) return; // Stop when all atoms are placed

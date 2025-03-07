@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThreeDMovement : MonoBehaviour
 {
     //movement
-    float speed = 30f; //base movement speed
+    float speed = 60f; //base movement speed
     float sprintSpeed = 20f; //"sprint" movement speed
     bool isHeld = false;
 
@@ -18,7 +18,7 @@ public class ThreeDMovement : MonoBehaviour
 
     //scroll
     public Camera camera; // Reference to the camera
-    public float zoomSpeed = 10f; // How fast the camera zooms in and out
+    public float zoomSpeed = 200f; // How fast the camera zooms in and out
     public float scrollCount = 0f;
 
 
