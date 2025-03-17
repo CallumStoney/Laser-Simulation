@@ -8,3 +8,4 @@
 # Ignore .meta and .obj files but do not enforce size limits
 *.meta filter=lfs diff=lfs merge=lfs -text
 *.obj filter=lfs diff=lfs merge=lfs -text
+Library/Artifacts/** filter=lfs diff=lfs merge=lfs -text
