@@ -47,9 +47,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\TwoDSpawnElectrons.cs" />
      <Compile Include="Assets\scripts\ThreeDMovement.cs" />
      <Compile Include="Assets\scripts\CreateUniqueShaderInstance.cs" />
      <Compile Include="Assets\scripts\SpawnElectrons.cs" />
+     <Compile Include="Assets\scripts\2DSpawnElectrons.cs" />
      <Compile Include="Assets\scripts\SpawnPhotons.cs" />
      <Compile Include="Assets\ToDoList.cs" />
      <Compile Include="Assets\scripts\MainController.cs" />

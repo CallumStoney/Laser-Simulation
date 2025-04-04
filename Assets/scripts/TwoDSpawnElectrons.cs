@@ -18,12 +18,14 @@ public class TwoDSpawnElectrons : MonoBehaviour
 
         electrons = new List<GameObject>(); //initialize the electrons list
 
-        for (int i = 1; i <= numElectrons; i++)
+        float incScale = 1f;
+        for (int i = 2; i <= numElectrons + 7; i += 8)
         {
             GameObject path = Instantiate(electronPath, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            path.transform.localScale = new Vector3(i, i, 1f);
+            path.transform.localScale = new Vector3(incScale, incScale, 1f);
+            incScale += 1;
 
-            path.name = "path " + i;
+            path.name = "path " + (incScale - 1f);
             path.transform.SetParent(this.transform); //set orbital as child of the nucleus
             paths.Add(path); //add orbital to the list
         }
