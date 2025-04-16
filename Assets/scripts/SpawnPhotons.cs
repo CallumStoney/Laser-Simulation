@@ -7,6 +7,9 @@ public class SpawnPhotons : MonoBehaviour
     public GameObject photon;
     public float spawnInterval = 0.01f; // Time interval between spawns (in seconds)
     private float spawnTimer = 0f; // Timer to control spawn rate
+    private float raduis = 17.5f;
+
+    int counter = 0;
 
     void Start()
     {
@@ -24,7 +27,7 @@ public class SpawnPhotons : MonoBehaviour
         if (spawnTimer <= 0f)
         {
             // Spawn photons at the desired interval
-            Vector3 positionPlacement = new Vector3(Random.Range(transform.position.x - 5f, transform.position.x + 5f), Random.Range(transform.position.y - 5f, transform.position.y + 5f), Random.Range(transform.position.z - 5f, transform.position.z + 5f));
+            Vector3 positionPlacement = new Vector3(Random.Range(transform.position.x - raduis, transform.position.x + raduis), Random.Range(transform.position.y - raduis, transform.position.y + raduis), Random.Range(transform.position.z, transform.position.z));
             SpawnNumPhotonsDirectionPosition(10, positionPlacement, new Vector3(0,0,-1));
 
             // Reset the timer based on the interval
@@ -38,7 +41,9 @@ public class SpawnPhotons : MonoBehaviour
         {
             Debug.Log("spawn photon");
             GameObject newPhoton = Instantiate(photon, position, Quaternion.identity);
+            newPhoton.name = newPhoton.name + counter;
             newPhoton.GetComponent<photonMovement>().direction = direction;
+            counter++;
         }
     }
 }

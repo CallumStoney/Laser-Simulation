@@ -94,7 +94,7 @@ public class ThreeDMovement : MonoBehaviour
         //acceleration
         if (isHeld)
         {
-            speed += (speed * 0.005f);
+            speed += (speed * 0.0005f);
             if (speed >= 500f)
             {
                 speed = 500f;

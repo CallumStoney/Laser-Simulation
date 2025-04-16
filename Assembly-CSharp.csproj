@@ -49,6 +49,7 @@
   <ItemGroup>
      <Compile Include="Assets\scripts\TwoDSpawnElectrons.cs" />
      <Compile Include="Assets\scripts\ThreeDMovement.cs" />
+     <Compile Include="Assets\scripts\Movement2D.cs" />
      <Compile Include="Assets\scripts\CreateUniqueShaderInstance.cs" />
      <Compile Include="Assets\scripts\SpawnElectrons.cs" />
      <Compile Include="Assets\scripts\2DSpawnElectrons.cs" />

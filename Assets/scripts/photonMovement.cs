@@ -10,6 +10,7 @@ public class photonMovement : MonoBehaviour
     public Rigidbody rb; // Rigidbody for movement
     public Collider photonCollider; // Collider of the photon (for detecting collision with electron collider)
 
+
     void Start()
     {
         // Randomly set photon direction (normalized) to simulate random emission
@@ -44,7 +45,7 @@ public class photonMovement : MonoBehaviour
     void AbsorbPhoton()
     {
         // Handle photon absorption logic (e.g., trigger electron excitation)
-        Debug.Log("Photon absorbed by electron");
+        Debug.Log("Photon absorbed by electron " + name);
 
         // Destroy photon after absorption
         Destroy(this.gameObject);

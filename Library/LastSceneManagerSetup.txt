@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/2DSimulation.unity
+- path: Assets/Scenes/3DSimulation.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
