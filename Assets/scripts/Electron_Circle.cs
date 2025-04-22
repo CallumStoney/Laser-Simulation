@@ -15,11 +15,12 @@ public class Electron_Circle : MonoBehaviour
         orbital = GetComponentInParent<SpawnElectrons>().orbitals[n - 1]; // Get orbital corresponding to atomic number n
         orbitalMeshFilter = orbital.GetComponent<MeshFilter>(); // Get the mesh filter of the orbital
         electronCollider = GetComponent<Collider>(); // Get the collider attached to the electron (should be a sphere or similar)
+        //Movement();
     }
 
     void Update()
     {
-        //Movement(); // Move the electron throughout the orbital
+        Movement(); // Move the electron throughout the orbital
     }
 
     void Movement()
