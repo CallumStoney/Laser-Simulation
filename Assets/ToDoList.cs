@@ -7,7 +7,6 @@ public class ToDoList : MonoBehaviour
     /*
     //3D simulation
     -Add light coil with the layer system
-    -Add Photons in a way that makes the absorbtion rate what it should be
     -Add visual effects for when an atom/electron is absorbing a photon
 
 
