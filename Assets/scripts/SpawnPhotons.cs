@@ -16,6 +16,7 @@ public class SpawnPhotons : MonoBehaviour
     
     public Vector3 directionOfSpawn;
 
+
     int counter = 0;
 
     void Start()
@@ -31,6 +32,7 @@ public class SpawnPhotons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Time.time);
         // Count down the timer
         spawnTimer -= Time.deltaTime;
 
@@ -56,7 +58,10 @@ public class SpawnPhotons : MonoBehaviour
     {
         for (int i = 0; i < numPhotons; i++)
         {
-            Debug.Log("spawn photon");
+            for (int j = 0; j < 107; j++)
+            {
+                Debug.Log("spawn photon (in millions)");
+            }
             GameObject newPhoton = Instantiate(photon, position, Quaternion.identity);
             newPhoton.name = newPhoton.name + counter;
             newPhoton.GetComponent<photonMovement>().dir = dir;
@@ -68,6 +73,6 @@ public class SpawnPhotons : MonoBehaviour
     {
         // Spawn photons at the desired interval
         Vector3 positionPlacement = new Vector3(Random.Range(transform.position.x - radius, transform.position.x + radius), Random.Range(transform.position.y - radius, transform.position.y + radius), transform.position.z);
-        SpawnNumPhotonsDirectionPosition(10, positionPlacement, directionOfSpawn);
+        SpawnNumPhotonsDirectionPosition(1, positionPlacement, directionOfSpawn);
     }
 }

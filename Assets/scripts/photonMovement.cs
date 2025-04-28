@@ -10,6 +10,7 @@ public class photonMovement : MonoBehaviour
     public Rigidbody rb; // Rigidbody for movement
     public Collider photonCollider; // Collider of the photon (for detecting collision with electron collider)
 
+
     private bool isabsorbed = false;
 
 
@@ -50,7 +51,7 @@ public class photonMovement : MonoBehaviour
     void AbsorbPhoton()
     {
         //Print of how many photons have been absorbed
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 375; i++)
         {
             Debug.Log("Photon has been absorbed");
         }
