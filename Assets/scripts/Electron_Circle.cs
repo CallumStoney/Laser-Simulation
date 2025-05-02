@@ -18,7 +18,7 @@ public class Electron_Circle : MonoBehaviour
         //Movement();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Movement(); // Move the electron throughout the orbital
     }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnPhotons : MonoBehaviour
 {
     public GameObject photon;
-    public float spawnInterval = 0.01f; // Time interval between spawns (in seconds)
+    [SerializeField] private float spawnInterval = 0.086f; // Time interval between spawns (in seconds), 0.086f is the default time interval
     private float spawnTimer; // Timer to control spawn rate
     private float radius;
 
@@ -18,6 +19,8 @@ public class SpawnPhotons : MonoBehaviour
 
 
     int counter = 0;
+
+    public Slider slider;
 
     void Start()
     {
@@ -32,6 +35,9 @@ public class SpawnPhotons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //update ouput
+        spawnInterval = slider.value;
+
         Debug.Log(Time.time);
         // Count down the timer
         spawnTimer -= Time.deltaTime;

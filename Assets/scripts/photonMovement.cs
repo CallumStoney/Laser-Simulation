@@ -51,7 +51,7 @@ public class photonMovement : MonoBehaviour
     void AbsorbPhoton()
     {
         //Print of how many photons have been absorbed
-        for (int i = 0; i < 375; i++)
+        for (int i = 0; i < 250; i++)
         {
             Debug.Log("Photon has been absorbed");
         }
