@@ -23,7 +23,7 @@ public class Electron_Circle : MonoBehaviour
         Movement(); // Move the electron throughout the orbital
     }
 
-    void Movement()
+    void Movement() 
     {
         Vector3 randomPosition = GetRandomPointInMeshBounds(); // Get a random position within the orbital bounds
         transform.position = randomPosition; // Update position of the electron

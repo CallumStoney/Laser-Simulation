@@ -10,6 +10,8 @@ public class photonMovement : MonoBehaviour
     public Rigidbody rb; // Rigidbody for movement
     public Collider photonCollider; // Collider of the photon (for detecting collision with electron collider)
 
+    //public float energyLevel = 2.3f;
+
 
     private bool isabsorbed = false;
 
@@ -37,6 +39,12 @@ public class photonMovement : MonoBehaviour
                     // Photon hits the electron, simulate absorption
                     AbsorbPhoton();
                     isabsorbed = true;
+
+                   GameObject AtomS = hit.collider.gameObject.transform.parent.gameObject; //parent object
+
+                   AtomS.GetComponent<AtomAbsorbPhoton>().ElectronSwitch(hit.collider.gameObject, this.gameObject);
+
+
                 }
             }
         }
@@ -55,8 +63,5 @@ public class photonMovement : MonoBehaviour
         {
             Debug.Log("Photon has been absorbed");
         }
-
-        // Destroy photon after absorption
-        Destroy(this.gameObject);
     }
 }
