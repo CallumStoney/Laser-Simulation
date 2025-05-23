@@ -36,7 +36,7 @@ public class SpawnPhotons : MonoBehaviour
     void Update()
     {
         //update ouput
-        spawnInterval = 1f - slider.value*slider.value;
+        spawnInterval = 1f - slider.value;
 
         //Debug.Log(Time.time);
         // Count down the timer
@@ -46,7 +46,7 @@ public class SpawnPhotons : MonoBehaviour
 
 
         // Check if it's time to spawn a new photon
-        if (spawnTimer <= 0f) //  && !stopSpawning && timerCutOff <= 4 && timerCutOff >= 3 // Check if it's time to spawn a new photon
+        if (spawnTimer <= 0f && spawnInterval < 0.1) //  && !stopSpawning && timerCutOff <= 4 && timerCutOff >= 3 // Check if it's time to spawn a new photon
         {
                 SpawnPhotonsShortCut();
             // Reset the timer based on the interval

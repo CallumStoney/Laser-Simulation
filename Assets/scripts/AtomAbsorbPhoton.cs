@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AtomAbsorbPhoton : MonoBehaviour
 {
+
+    private bool isExcited = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class AtomAbsorbPhoton : MonoBehaviour
 
     public void ElectronSwitch(GameObject electon, GameObject photon)
     {
-
+        isExcited = true;
 
 
         // Destroy photon after absorption
