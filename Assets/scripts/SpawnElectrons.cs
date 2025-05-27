@@ -6,7 +6,7 @@ public class SpawnElectrons : MonoBehaviour
 {
     public float numElectrons = 0f; //number of electrons
     public List<GameObject> orbitals; //list to hold orbital objects
-    List<GameObject> electrons; //list to hold electron objects
+    public List<GameObject> electrons; //list to hold electron objects
 
     public GameObject electron; //reference to the electron prefab
     public GameObject pOrbital; //reference to the orbital prefab
@@ -107,11 +107,11 @@ public class SpawnElectrons : MonoBehaviour
 
             if (i == (amountOfOrbitals + 1))
             {
-                orbitalAdd.SetActive(false);
+                orbitalAdd.SetActive(true);
             }
         }
 
-        //add electrons to list and create them
+        //add electrons to list and create them and set their quantum spin value
         for (int i = 0; i < numElectrons; i++)
         {
             GameObject e = Instantiate(electron, new Vector3(0, 0, 0), Quaternion.identity); //create an electron at position (0,0,0)

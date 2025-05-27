@@ -10,6 +10,10 @@ public class Electron_Circle : MonoBehaviour
     MeshFilter orbitalMeshFilter; // Mesh filter of the orbital
     public Collider electronCollider; // Collider for the electron (to be used for photon collision)
 
+    public float spinValue;
+    
+    
+
     void Start()
     {
         orbital = GetComponentInParent<SpawnElectrons>().orbitals[n - 1]; // Get orbital corresponding to atomic number n
