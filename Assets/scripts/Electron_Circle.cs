@@ -10,7 +10,7 @@ public class Electron_Circle : MonoBehaviour
     MeshFilter orbitalMeshFilter; // Mesh filter of the orbital
     public Collider electronCollider; // Collider for the electron (to be used for photon collision)
 
-    public float spinValue;
+    public double spinValue;
     
     
 
@@ -20,6 +20,7 @@ public class Electron_Circle : MonoBehaviour
         orbitalMeshFilter = orbital.GetComponent<MeshFilter>(); // Get the mesh filter of the orbital
         electronCollider = GetComponent<Collider>(); // Get the collider attached to the electron (should be a sphere or similar)
         //Movement();
+        SetSpinValue();
     }
 
     void FixedUpdate()
@@ -73,5 +74,41 @@ public class Electron_Circle : MonoBehaviour
         }
 
         return false; // Point is outside
+    }
+
+
+    //need to know: what orbital specifically its in and if there is a second electron in that orbital
+    private void SetSpinValue()
+    {
+        List<GameObject> electronsList = transform.parent.GetComponent<SpawnElectrons>().electrons;
+
+        for (int i = 0; i < electronsList.Count; i++)
+        {
+            if (electronsList[i] == gameObject)
+            {
+                spinValue = GetOrbitalItIsIn(i+1);
+            }
+        }
+    }
+
+    private double GetOrbitalItIsIn(int num)
+    {
+        if (num == 1)
+            return -0.5;
+        else if (num == 2)
+            return 0.5;
+        if (num == 5 || num == 6 || num == 7)
+            return 3;
+        if (num <= 12)
+            return 4;
+        if (num <= 22)
+            return 5;
+        if (num <= 24)
+            return 6;
+        if (num <= 30) //upto 3d
+            return 7;
+
+        return 0;
+
     }
 }

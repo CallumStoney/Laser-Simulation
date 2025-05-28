@@ -1609,7 +1609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8459521743625646891, guid: fae4a73d0005acf46854be49043433ac, type: 3}
       propertyPath: numElectrons
-      value: 24
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae4a73d0005acf46854be49043433ac, type: 3}
