@@ -93,20 +93,36 @@ public class Electron_Circle : MonoBehaviour
 
     private double GetOrbitalItIsIn(int num)
     {
+
+        //up to 3d orbital
         if (num == 1)
             return -0.5;
         else if (num == 2)
             return 0.5;
-        if (num == 5 || num == 6 || num == 7)
-            return 3;
-        if (num <= 12)
-            return 4;
-        if (num <= 22)
-            return 5;
-        if (num <= 24)
-            return 6;
-        if (num <= 30) //upto 3d
-            return 7;
+        else if (num == 3)
+            return -0.5;
+        else if (num == 4)
+            return 0.5;
+        else if (num == 5 || num == 6 || num == 7)
+            return -0.5;
+        else if (num == 8 || num == 9 || num == 10)
+            return 0.5;
+        else if (num == 11)
+            return -0.5;
+        else if (num == 12)
+            return 0.5;
+        else if (num == 13 || num == 14 || num == 15)
+            return -0.5;
+        else if (num == 16 || num == 17 || num == 18)
+            return 0.5;
+        else if (num == 19)
+            return -0.5;
+        else if (num == 20)
+            return 0.5;
+        else if (num == 21 || num == 22 || num == 23 || num == 24 || num == 25)
+            return -0.5;
+        else if (num == 26 || num == 27 || num == 28 || num == 29 || num == 30)
+            return 0.5;
 
         return 0;
 

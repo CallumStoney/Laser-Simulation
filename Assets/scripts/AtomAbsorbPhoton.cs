@@ -19,13 +19,22 @@ public class AtomAbsorbPhoton : MonoBehaviour
 
     public void ElectronSwitch(GameObject electon, GameObject photon)
     {
-        // Destroy photon after absorption
-        Destroy(photon.gameObject);
+        // Determine if photon should be absorbed
+        if(false)
+        {
 
-        //get reference to all the electrons in the atom
-        SpawnElectrons atom = this.GetComponent<SpawnElectrons>();
+            //get reference to all the electrons in the atom
+            SpawnElectrons atom = this.GetComponent<SpawnElectrons>();
 
-        //atom.electrons;
+            //atom.electrons;
+
+            Destroy(photon.gameObject);
+            Debug.Log("Photon has been absorbed");
+        }
+        else
+        {
+
+        }
 
     }
 }
