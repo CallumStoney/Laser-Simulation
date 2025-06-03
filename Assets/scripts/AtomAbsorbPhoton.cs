@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AtomAbsorbPhoton : MonoBehaviour
 {
+    //REMINDER: the oture orbital is turned on right now, make sure to fix that to turn it off
+
 
     // Start is called before the first frame update
     void Start()
