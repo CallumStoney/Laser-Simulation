@@ -42,7 +42,7 @@ public class ChangePhotonTrail : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("FrequencySlider not found or missing Slider component.");
+            //Debug.LogWarning("FrequencySlider not found or missing Slider component.");
         }
     }
 

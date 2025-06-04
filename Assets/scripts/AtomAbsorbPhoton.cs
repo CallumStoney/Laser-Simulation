@@ -21,8 +21,10 @@ public class AtomAbsorbPhoton : MonoBehaviour
 
     public void ElectronSwitch(GameObject electon, GameObject photon)
     {
+        float energyGiven = photon.GetComponent<photonMovement>().energyLevel;
+
         // Determine if photon should be absorbed
-        if(false)
+        if (false)
         {
 
             //get reference to all the electrons in the atom

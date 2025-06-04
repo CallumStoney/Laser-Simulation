@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Electron_Circle : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Electron_Circle : MonoBehaviour
         electronCollider = GetComponent<Collider>(); // Get the collider attached to the electron (should be a sphere or similar)
         //Movement();
         SetSpinValue();
+
     }
 
     void FixedUpdate()
