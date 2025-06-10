@@ -107,7 +107,7 @@ public class SpawnElectrons : MonoBehaviour
 
             if (i == (amountOfOrbitals + 1))
             {
-                orbitalAdd.SetActive(true);
+                orbitalAdd.SetActive(false);
             }
         }
 
@@ -133,10 +133,10 @@ public class SpawnElectrons : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        /*if (Input.GetKey(KeyCode.Space))
         {
             orbitals[orbitals.Count - 1].SetActive(false); //toggels visible outer orbital that is not inhabited.
-        }
+        } */
     }
     private float AmountOfOrbitals(float electrons)
     {

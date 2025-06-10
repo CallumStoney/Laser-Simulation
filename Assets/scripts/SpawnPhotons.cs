@@ -36,7 +36,8 @@ public class SpawnPhotons : MonoBehaviour
     void Update()
     {
         //update ouput
-        spawnInterval = 1f - slider.value;
+        spawnInterval = (1f - (slider.value - 0.01f));
+        spawnInterval *= 8f;
 
         //Debug.Log(Time.time);
         // Count down the timer
@@ -46,7 +47,7 @@ public class SpawnPhotons : MonoBehaviour
 
 
         // Check if it's time to spawn a new photon
-        if (spawnTimer <= 0f && spawnInterval < 0.1) //  && !stopSpawning && timerCutOff <= 4 && timerCutOff >= 3 // Check if it's time to spawn a new photon
+        if (spawnTimer <= 0f && spawnInterval < 0.88) //  && !stopSpawning && timerCutOff <= 4 && timerCutOff >= 3 // Check if it's time to spawn a new photon
         {
                 SpawnPhotonsShortCut();
             // Reset the timer based on the interval
@@ -66,7 +67,7 @@ public class SpawnPhotons : MonoBehaviour
         {
             for (int j = 0; j < 107; j++)
             {
-                Debug.Log("spawn photon (in millions)");
+                //Debug.Log("spawn photon (in millions)");
             }
             GameObject newPhoton = Instantiate(photon, position, Quaternion.identity);
             newPhoton.name = newPhoton.name + counter;
@@ -78,7 +79,7 @@ public class SpawnPhotons : MonoBehaviour
     private void SpawnPhotonsShortCut()
     {
         // Spawn photons at the desired interval
-        Vector3 positionPlacement = new Vector3(Random.Range(transform.position.x - radius, transform.position.x + radius), Random.Range(transform.position.y - radius, transform.position.y + radius), transform.position.z);
+        Vector3 positionPlacement = new Vector3(Random.Range(transform.position.x - radius, transform.position.x + radius), transform.position.y, Random.Range(transform.position.z - radius, transform.position.z + radius));
         SpawnNumPhotonsDirectionPosition(1, positionPlacement, directionOfSpawn);
     }
 }

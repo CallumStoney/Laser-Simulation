@@ -3663,6 +3663,7 @@ GameObject:
   - component: {fileID: 7553913301933142347}
   - component: {fileID: 8364460003812264779}
   - component: {fileID: 915781554051753646}
+  - component: {fileID: 3249258227615488042}
   m_Layer: 0
   m_Name: Atom
   m_TagString: Untagged
@@ -3748,6 +3749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numElectrons: 1
   orbitals: []
+  electrons: []
   electron: {fileID: 3829296700869924396, guid: 2c6422d2063fd2a4b87170577d48f001, type: 3}
   pOrbital: {fileID: 2122449473503975403, guid: 973ab523c201f11489064d053c1406d2, type: 3}
   SOrbital: {fileID: 7892957488289975968, guid: 498011aa451e5b14e91bab54a355703f, type: 3}
@@ -3776,6 +3778,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d551ac657e8115469dd43994797d829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3249258227615488042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364460003812264777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8043c4f4d0b45846ba95373d060775f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8492362055219039407
