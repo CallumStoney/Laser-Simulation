@@ -1,68 +1,77 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class photonMovement : MonoBehaviour
 {
-    private Slider slider;
-
-    const float SPEED = 299792458f; // Speed of light in meters per second
-    const float SPEED_MULTIPLIER = 0.00000005f; // Much slower sub-light speed multiplier for realism
-    public Vector3 dir; // Direction of photon movement
-    public Rigidbody rb; // Rigidbody for movement
-    public Collider photonCollider; // Collider of the photon (for detecting collision with electron collider)
-
+    [Header("Photon Settings")]
+    public Vector3 dir;
     public float energyLevel = 0f;
+
+    private const float SPEED = 299792458f;         // Speed of light in m/s
+    private const float SPEED_MULTIPLIER = 0.00000005f; // Custom sub-light scale for simulation
+
+    private Rigidbody rb;
+    private static Slider frequencySlider;
+
+    private const float MAX_DISTANCE = 500f;
 
     void Start()
     {
-        //set values
-        slider = GameObject.Find("FrequencySlider").GetComponent<Slider>();
-        AssignEnergylevel(1001 - slider.value);
-    }
+        // Cache Rigidbody reference
+        rb = GetComponent<Rigidbody>();
 
-    void Update()
-    {
-
-        // Move the photon based on its direction and speed
-        rb.velocity = dir * SPEED * SPEED_MULTIPLIER;
-
-        // Raycast to check if photon intersects any electron collider (assuming photon collider is interacting with electron's collider)
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, dir, out hit, Mathf.Infinity))
+        // Cache static slider only once
+        if (frequencySlider == null)
+        {
+            GameObject sliderObj = GameObject.Find("FrequencySlider");
+            if (sliderObj != null)
             {
-                // Check if the photon hits an electron (Electron_Circle collider)
-                if (hit.collider.CompareTag("Electron"))
-                {
+                frequencySlider = sliderObj.GetComponent<Slider>();
+            }
+        }
 
-                   GameObject AtomS = hit.collider.gameObject.transform.parent.gameObject; //parent object
-
-                   AtomS.GetComponent<AtomAbsorbPhoton>().ElectronSwitch(hit.collider.gameObject, this.gameObject);
-
-
-                }
-            } 
-
-        if (Mathf.Abs(transform.position.x) > 500 || Mathf.Abs(transform.position.y) > 500 || Mathf.Abs(transform.position.z) > 500)
+        if (frequencySlider != null)
         {
-            Destroy(this.gameObject);
+            AssignEnergyLevel(1001f - frequencySlider.value);
+        }
+
+        // Set initial velocity
+        rb.velocity = dir.normalized * SPEED * SPEED_MULTIPLIER;
+    }
+
+    void FixedUpdate()
+    {
+        // Keep photon moving (in case Rigidbody drag/friction slows it)
+        rb.velocity = dir.normalized * SPEED * SPEED_MULTIPLIER;
+
+        // Check for intersection with an electron
+        if (Physics.Raycast(transform.position, dir, out RaycastHit hit, 1f)) // short ray to reduce performance cost
+        {
+            if (hit.collider.CompareTag("Electron"))
+            {
+                AtomAbsorbPhoton atom = hit.collider.GetComponentInParent<AtomAbsorbPhoton>();
+                if (atom != null)
+                {
+                    atom.ElectronSwitch(hit.collider.gameObject, gameObject);
+                }
+            }
+        }
+
+        // Out-of-bounds check
+        Vector3 pos = transform.position;
+        if (Mathf.Abs(pos.x) > MAX_DISTANCE || Mathf.Abs(pos.y) > MAX_DISTANCE || Mathf.Abs(pos.z) > MAX_DISTANCE)
+        {
+            Destroy(gameObject);
         }
     }
 
-
-    private void AssignEnergylevel(float wavelength)
+    private void AssignEnergyLevel(float wavelength)
     {
-        // Ensure wavelength is within a valid range to prevent division by zero
-        if (wavelength < 1f || wavelength > 1000f)
+        // Energy in eV using E = 1240 / λ (wavelength in nm)
+        if (wavelength >= 1f && wavelength <= 1000f)
         {
-            return;
+            energyLevel = 1240f / wavelength;
         }
-
-        // Energy in electronvolts
-        energyLevel = 1240f / wavelength;
-
-        // You can now use energyEV as needed in your script
-        //Debug.Log("Energy in eV: " + energyLevel);
     }
 }

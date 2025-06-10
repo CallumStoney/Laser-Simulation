@@ -4,49 +4,52 @@ using UnityEngine;
 
 public class SpawnAtom : MonoBehaviour
 {
-
-    //atom spawning
-    public GameObject atom;
-    public int numElectrons;
-    public int amountAtoms;
-    public int atomDiameter;
-    public int maxLength;
+    public GameObject atom;           // Prefab of the atom
+    public int numElectrons;          // Number of electrons per atom
+    public int amountAtoms;           // Total number of atoms to spawn
+    public int atomDiameter;          // Distance between each atom along Z
+    public float xRandomRange = 20f;  // Max X-axis random offset
 
     void Start()
     {
-        // Example: Start position and length
-        SpawnSpecificAtom(numElectrons, amountAtoms, atomDiameter, maxLength, transform.position);
+        SpawnAtomsInLine(amountAtoms, atomDiameter, transform.position);
     }
 
-    private void SpawnSpecificAtom(int numElectrons, int amount, int diameter, int length, Vector3 startingPosition)
+    private void SpawnAtomsInLine(int count, int diameter, Vector3 center)
     {
-        int numAtomsPerLayer = 9; // A full 3x3 layer contains 9 atoms
-        int fullLayers = amount / numAtomsPerLayer; // Number of complete 3x3 layers
-        int remainingAtoms = amount % numAtomsPerLayer; // Atoms left after full layers
+        int placed = 0;
 
-        int totalLayers = Mathf.Min(fullLayers + (remainingAtoms > 0 ? 1 : 0), length); // Limit layers to 'length'
-        int placedAtoms = 0; // Track number of atoms placed
+        // Place the first atom at the center (z = 0)
+        PlaceAtom(center, numElectrons);
+        placed++;
 
-        for (int z = 0; z < totalLayers; z++)
+        int step = 1;
+
+        while (placed < count)
         {
-            int atomsInLayer = (z < fullLayers) ? numAtomsPerLayer : remainingAtoms; // Full layers get 9, last layer gets the remaining
-
-            for (int i = 0; i < atomsInLayer; i++)
+            // +Z
+            if (placed < count)
             {
-                int x = i % 3; // X position in 3x3 grid
-                int y = i / 3; // Y position in 3x3 grid
-
-                Vector3 position = startingPosition + new Vector3(x * diameter, y * diameter, z * diameter);
-
-
-                //change depending on atom type
-                GameObject newAtom = Instantiate(atom, position, Quaternion.identity, this.transform); // Set parent to this object
-                newAtom.GetComponent<SpawnElectrons>().numElectrons = numElectrons;
-                //
-
-                placedAtoms++;
-                if (placedAtoms >= amount) return; // Stop when all atoms are placed
+                Vector3 pos = center + new Vector3(Random.Range(-xRandomRange, xRandomRange), 0, step * diameter);
+                PlaceAtom(pos, numElectrons);
+                placed++;
             }
+
+            // -Z
+            if (placed < count)
+            {
+                Vector3 pos = center + new Vector3(Random.Range(-xRandomRange, xRandomRange), 0, -step * diameter);
+                PlaceAtom(pos, numElectrons);
+                placed++;
+            }
+
+            step++;
         }
+    }
+
+    private void PlaceAtom(Vector3 position, int numElectrons)
+    {
+        GameObject newAtom = Instantiate(atom, position, Quaternion.identity, this.transform);
+        newAtom.GetComponent<SpawnElectrons>().numElectrons = numElectrons;
     }
 }

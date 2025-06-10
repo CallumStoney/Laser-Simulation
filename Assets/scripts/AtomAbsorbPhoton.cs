@@ -49,14 +49,17 @@ public class AtomAbsorbPhoton : MonoBehaviour
         ExcitationResult result = GetExcitation(atomNumber, energyGiven);
         if (result.finalN > 0)
         {
-            Debug.Log($"Electron #{electronNumber} (Z={atomNumber}) excited to n={result.finalN} with ΔE = {result.deltaE:F2} eV.");
+            //excite
+
+
+            //destroy photon
+            Destroy(photon);
         }
         else
         {
-            Debug.Log($"Photon energy {energyGiven} eV does NOT match any allowed transition for electron #{electronNumber} (Z={atomNumber}).");
+           
         }
 
-        Destroy(photon);
     }
 
     private ExcitationResult GetExcitation(int atomicNumber, float energyGiven)
@@ -65,7 +68,8 @@ public class AtomAbsorbPhoton : MonoBehaviour
         {
             foreach (var pair in transitions)
             {
-                if (Mathf.Approximately(energyGiven, pair.Item1))
+                // Compare up to 2 decimal places
+                if (Mathf.Round(pair.Item1 * 100f) == Mathf.Round(energyGiven * 100f))
                 {
                     return new ExcitationResult { deltaE = pair.Item1, finalN = pair.Item2 };
                 }
