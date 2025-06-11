@@ -6,10 +6,15 @@ public class AtomMove : MonoBehaviour
 {
     private Vector3 origin;
     private Vector3 currentDirection;
-    private float speed = 1.5f;          // How fast it moves
+
+    [SerializeField]
+    private float baseSpeed = 1.5f;      // Base movement speed
+
     private float range = 2.5f;          // Max ± distance from origin
-    private float changeDirectionTime = 1.5f; // How often to change direction
+    private float changeDirectionTime = 0.1f; // How often to change direction
     private float directionTimer = 0f;
+
+    public bool excite = false;         // Public flag to control excitation
 
     void Start()
     {
@@ -27,6 +32,10 @@ public class AtomMove : MonoBehaviour
             PickNewDirection();
             directionTimer = 0f;
         }
+
+        // Determine speed multiplier
+        float speedMultiplier = excite ? 20f : 1f;
+        float speed = baseSpeed * speedMultiplier;
 
         // Move in current direction
         Vector3 movement = currentDirection * speed * Time.deltaTime;

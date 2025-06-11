@@ -8,7 +8,8 @@ public class SpawnPhotons : MonoBehaviour
     public GameObject photon;
     [SerializeField] private float spawnInterval; // Time interval between spawns (in seconds), 0.086f is the default time interval
     private float spawnTimer; // Timer to control spawn rate
-    private float radius;
+    public float radiusX;
+    public float radiusZ;
 
     //stop timer
     private float timeCutOff = 5f; // Time interval between spawns (in seconds)
@@ -26,7 +27,6 @@ public class SpawnPhotons : MonoBehaviour
     {
         // Optionally, you could spawn some photons at the start if you like.
         // SpawnNumPhotonsDirectionPosition(30, new Vector3(0,0,0), Vector3.right);
-        radius = transform.localScale.x / 2;
         //set timers
         spawnTimer = spawnInterval;
         timerCutOff = timeCutOff;
@@ -37,7 +37,7 @@ public class SpawnPhotons : MonoBehaviour
     {
         //update ouput
         spawnInterval = (1f - (slider.value - 0.01f));
-        spawnInterval *= 8f;
+        spawnInterval *= 2f;
 
         //Debug.Log(Time.time);
         // Count down the timer
@@ -47,7 +47,7 @@ public class SpawnPhotons : MonoBehaviour
 
 
         // Check if it's time to spawn a new photon
-        if (spawnTimer <= 0f && spawnInterval < 0.88) //  && !stopSpawning && timerCutOff <= 4 && timerCutOff >= 3 // Check if it's time to spawn a new photon
+        if (spawnTimer <= 0f && spawnInterval < 0.22) //  && !stopSpawning && timerCutOff <= 4 && timerCutOff >= 3 // Check if it's time to spawn a new photon
         {
                 SpawnPhotonsShortCut();
             // Reset the timer based on the interval
@@ -79,7 +79,7 @@ public class SpawnPhotons : MonoBehaviour
     private void SpawnPhotonsShortCut()
     {
         // Spawn photons at the desired interval
-        Vector3 positionPlacement = new Vector3(Random.Range(transform.position.x - radius, transform.position.x + radius), transform.position.y, Random.Range(transform.position.z - radius, transform.position.z + radius));
+        Vector3 positionPlacement = new Vector3(Random.Range(transform.position.x - radiusX, transform.position.x + radiusX), transform.position.y, Random.Range(transform.position.z - radiusZ, transform.position.z + radiusZ));
         SpawnNumPhotonsDirectionPosition(1, positionPlacement, directionOfSpawn);
     }
 }

@@ -1,9 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using UnityEngine.UIElements;
+using System.Collections;
 
 public class AtomAbsorbPhoton : MonoBehaviour
 {
+    private float energyLevel = 0f;
+    private float timer = 0.5f;
+    private float timeToRelease = 0f;
+    private bool time = false;
+    public Vector3 dir;
+
+    public GameObject photon;
+
+
     private struct ExcitationResult
     {
         public int finalN;
@@ -39,28 +51,39 @@ public class AtomAbsorbPhoton : MonoBehaviour
         { 24, new List<(float, int)> { (2.45f, 4) } },
     };
 
-    public void ElectronSwitch(GameObject electron, GameObject photon)
+    public void ElectronSwitch(GameObject atom, GameObject photon, bool isExcited)
     {
         float energyGiven = photon.GetComponent<photonMovement>().energyLevel;
-        SpawnElectrons atom = GetComponent<SpawnElectrons>();
-        int atomNumber = atom.electrons.Count;
-        int electronNumber = atom.electrons.IndexOf(electron);
+        int atomNumber = atom.GetComponent<SpawnElectrons>().electrons.Count;
 
         ExcitationResult result = GetExcitation(atomNumber, energyGiven);
-        if (result.finalN > 0)
+        if (result.finalN > 0 && !isExcited)
         {
-            //excite
+            //excite (make the atom start geeking)
+            atom.GetComponent<AtomMove>().excite = true;
 
-
-            //destroy photon
+            //copy photon & destroy
+            energyLevel = photon.GetComponent<photonMovement>().energyLevel;
             Destroy(photon);
-        }
-        else
-        {
-           
-        }
 
+            //set timer till release
+            time = true;
+        }
+        else if (result.finalN > 0 && isExcited)
+        {
+
+            //copy photon & destroy
+            energyLevel = photon.GetComponent<photonMovement>().energyLevel;
+            dir = photon.GetComponent<photonMovement>().dir;
+            Destroy(photon);
+
+            //get rid of time
+            timeToRelease = 0f;
+            time = false;
+            ReleaseWhileExcited();
+        }
     }
+
 
     private ExcitationResult GetExcitation(int atomicNumber, float energyGiven)
     {
@@ -76,5 +99,63 @@ public class AtomAbsorbPhoton : MonoBehaviour
             }
         }
         return new ExcitationResult { deltaE = 0f, finalN = 0 };
+    }
+
+    private void FixedUpdate()
+    {
+        if (time)
+        {
+            timeToRelease += Time.deltaTime;
+        }
+        if (timeToRelease >= timer)
+        {
+            timeToRelease = 0f;
+            time = false;
+            Release();
+        }
+    }
+
+    private void Release()
+    {
+        // release photon
+        gameObject.GetComponent<AtomMove>().excite = false;
+
+        // instantiate new photon
+        GameObject newPhoton = Instantiate(photon, gameObject.transform.position, Quaternion.identity);
+
+        // assign a random direction
+        Vector3 randomDirection = new Vector3(0, 0, 1);     //UnityEngine.Random.onUnitSphere; // random normalized direction in 3D
+        newPhoton.GetComponent<photonMovement>().dir = randomDirection;
+
+        // set energy level
+        newPhoton.GetComponent<photonMovement>().energyLevel = energyLevel;
+        energyLevel = 0f;
+    }
+
+    private void ReleaseWhileExcited()
+    {
+        // release photon
+        gameObject.GetComponent<AtomMove>().excite = false;
+
+        // instantiate first photon
+        GameObject newPhoton = Instantiate(photon, transform.position, Quaternion.identity);
+        newPhoton.GetComponent<photonMovement>().dir = new Vector3(0, 0, 1); //dir;
+        newPhoton.GetComponent<photonMovement>().energyLevel = energyLevel;
+
+        // start coroutine and pass copies of values
+        StartCoroutine(SpawnDelayedPhoton(dir, energyLevel));
+
+        // reset after coroutine has values
+        energyLevel = 0f;
+        dir = Vector3.zero;
+    }
+
+    private IEnumerator SpawnDelayedPhoton(Vector3 savedDir, float savedEnergy)
+    {
+        yield return new WaitForSeconds(0.3f); // delay in seconds
+
+        GameObject newPhoton2 = Instantiate(photon, transform.position, Quaternion.identity);
+        newPhoton2.GetComponent<photonMovement>().dir = new Vector3(0, 0, 1);  //savedDir;
+        newPhoton2.GetComponent<photonMovement>().energyLevel = savedEnergy;
     }
 }

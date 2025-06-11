@@ -9,12 +9,17 @@ public class photonMovement : MonoBehaviour
     public float energyLevel = 0f;
 
     private const float SPEED = 299792458f;         // Speed of light in m/s
-    private const float SPEED_MULTIPLIER = 0.00000005f; // Custom sub-light scale for simulation
+    private const float SPEED_MULTIPLIER = 0.0000004f; // Custom sub-light scale for simulation
 
     private Rigidbody rb;
     private static Slider frequencySlider;
 
     private const float MAX_DISTANCE = 500f;
+
+    private float timer = 0.05f;
+    private float time = 0f;
+    private bool canBeAbsorbed = false;
+
 
     void Start()
     {
@@ -31,9 +36,10 @@ public class photonMovement : MonoBehaviour
             }
         }
 
-        if (frequencySlider != null)
+        if (frequencySlider != null && energyLevel == 0f)
         {
             AssignEnergyLevel(1001f - frequencySlider.value);
+            canBeAbsorbed = true;
         }
 
         // Set initial velocity
@@ -48,12 +54,12 @@ public class photonMovement : MonoBehaviour
         // Check for intersection with an electron
         if (Physics.Raycast(transform.position, dir, out RaycastHit hit, 1f)) // short ray to reduce performance cost
         {
-            if (hit.collider.CompareTag("Electron"))
+            if (hit.collider.CompareTag("Electron") && canBeAbsorbed)
             {
                 AtomAbsorbPhoton atom = hit.collider.GetComponentInParent<AtomAbsorbPhoton>();
                 if (atom != null)
                 {
-                    atom.ElectronSwitch(hit.collider.gameObject, gameObject);
+                    atom.ElectronSwitch((hit.collider.gameObject).transform.parent.gameObject, gameObject, (hit.collider.gameObject).transform.parent.gameObject.GetComponent<AtomMove>().excite);
                 }
             }
         }
@@ -64,6 +70,16 @@ public class photonMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (!canBeAbsorbed)
+        {
+            time += Time.deltaTime;
+        }
+        if (time >= timer)
+        {
+            time = 0f;
+            canBeAbsorbed = true;
+        }
     }
 
     private void AssignEnergyLevel(float wavelength)
@@ -72,6 +88,15 @@ public class photonMovement : MonoBehaviour
         if (wavelength >= 1f && wavelength <= 1000f)
         {
             energyLevel = 1240f / wavelength;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Mirror"))
+        {
+            dir = -dir;
+            canBeAbsorbed = false;
         }
     }
 }

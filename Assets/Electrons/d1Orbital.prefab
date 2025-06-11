@@ -24,6 +24,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2122449473503975403, guid: 973ab523c201f11489064d053c1406d2, type: 3}
+      propertyPath: m_TagString
+      value: Electron
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122449473503975403, guid: 973ab523c201f11489064d053c1406d2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}

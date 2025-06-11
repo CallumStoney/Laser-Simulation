@@ -4,52 +4,72 @@ using UnityEngine;
 
 public class SpawnAtom : MonoBehaviour
 {
-    public GameObject atom;           // Prefab of the atom
-    public int numElectrons;          // Number of electrons per atom
-    public int amountAtoms;           // Total number of atoms to spawn
-    public int atomDiameter;          // Distance between each atom along Z
-    public float xRandomRange = 20f;  // Max X-axis random offset
+    [Header("Cylinder Dimensions")]
+    public float cylinderRadius = 25f;      // Radius of cylinder (x,y plane)
+    public float cylinderLength = 200f;      // Length along z-axis
+
+    [Header("Atom Settings")]
+    public GameObject atomPrefab;             // Prefab of the atom to spawn
+    public int numElectrons = 1;              // Number of electrons per atom
+    public int amountAtoms = 1000;            // Max atoms to spawn (caps total)
+    public int atomDiameter = 46;             // Diameter of each atom sphere
+
+    // Center of cylinder in world space
+    public Vector3 cylinderCenter = new Vector3(0, 0, -150);
 
     void Start()
     {
-        SpawnAtomsInLine(amountAtoms, atomDiameter, transform.position);
+        SpawnAtomsInCylinder();
     }
 
-    private void SpawnAtomsInLine(int count, int diameter, Vector3 center)
+    void SpawnAtomsInCylinder()
     {
-        int placed = 0;
+        float atomRadius = atomDiameter / 2f;
 
-        // Place the first atom at the center (z = 0)
-        PlaceAtom(center, numElectrons);
-        placed++;
+        // Calculate boundaries accounting for atom radius so they don't go outside cylinder
+        float halfLength = cylinderLength / 2f;
 
-        int step = 1;
+        float zMin = cylinderCenter.z - halfLength + atomRadius;
+        float zMax = cylinderCenter.z + halfLength - atomRadius;
 
-        while (placed < count)
+        float yMin = cylinderCenter.y - cylinderRadius + atomRadius;
+        float yMax = cylinderCenter.y + cylinderRadius - atomRadius;
+
+        float maxXY = cylinderRadius - atomRadius;
+
+        int spawnedCount = 0;
+
+        // Loop through z (length)
+        for (float z = zMin; z <= zMax; z += atomDiameter)
         {
-            // +Z
-            if (placed < count)
+            // Loop through y (height)
+            for (float y = yMin; y <= yMax; y += atomDiameter)
             {
-                Vector3 pos = center + new Vector3(Random.Range(-xRandomRange, xRandomRange), 0, step * diameter);
-                PlaceAtom(pos, numElectrons);
-                placed++;
-            }
+                // Loop through x (width)
+                for (float x = -maxXY; x <= maxXY; x += atomDiameter)
+                {
+                    if (spawnedCount >= amountAtoms)
+                        return; // reached max atoms
 
-            // -Z
-            if (placed < count)
-            {
-                Vector3 pos = center + new Vector3(Random.Range(-xRandomRange, xRandomRange), 0, -step * diameter);
-                PlaceAtom(pos, numElectrons);
-                placed++;
-            }
+                    // Check if (x,y) is inside cylinder cross-section circle
+                    if (x * x + y * y <= maxXY * maxXY)
+                    {
+                        Vector3 pos = new Vector3(x, y, z);
 
-            step++;
+                        // Instantiate atom at position, parented to this GameObject for neat hierarchy
+                        GameObject newAtom = Instantiate(atomPrefab, pos, Quaternion.identity, transform);
+
+                        // Set number of electrons if script exists on prefab
+                        var electronScript = newAtom.GetComponent<SpawnElectrons>();
+                        if (electronScript != null)
+                            electronScript.numElectrons = numElectrons;
+
+                        spawnedCount++;
+                    }
+                }
+            }
         }
-    }
 
-    private void PlaceAtom(Vector3 position, int numElectrons)
-    {
-        GameObject newAtom = Instantiate(atom, position, Quaternion.identity, this.transform);
-        newAtom.GetComponent<SpawnElectrons>().numElectrons = numElectrons;
+        Debug.Log($"Total atoms spawned: {spawnedCount}");
     }
 }

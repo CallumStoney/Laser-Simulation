@@ -105,10 +105,10 @@ public class SpawnElectrons : MonoBehaviour
             orbitalAdd.transform.SetParent(this.transform); //set orbital as child of the nucleus
             orbitals.Add(orbitalAdd); //add orbital to the list
 
-            if (i == (amountOfOrbitals + 1))
+            /*if (i == (amountOfOrbitals + 1))
             {
                 orbitalAdd.SetActive(false);
-            }
+            } */
         }
 
         //add electrons to list and create them and set their quantum spin value

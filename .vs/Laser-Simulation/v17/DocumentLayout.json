@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\assets\\scripts\\spawnphotons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnphotons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\assets\\scripts\\spawnelectrons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnelectrons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\assets\\scripts\\electron_circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\electron_circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\assets\\scripts\\spawnatom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnatom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|c:\\users\\callu\\onedrive\\documents\\despondent-survival\\laser-simulation\\assets\\scripts\\atommove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\atommove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|c:\\users\\callu\\onedrive\\documents\\despondent-survival\\laser-simulation\\assets\\scripts\\electron_circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\electron_circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\assets\\scripts\\atomabsorbphoton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\atomabsorbphoton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|c:\\users\\callu\\onedrive\\documents\\despondent-survival\\laser-simulation\\assets\\scripts\\photonmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\photonmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|c:\\users\\callu\\onedrive\\documents\\despondent-survival\\laser-simulation\\assets\\scripts\\spawnphotons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnphotons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\assets\\scripts\\atommove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB5903C-31F3-3E04-C25C-5167EA991FCB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\atommove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,20 +46,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "photonMovement.cs",
+              "DocumentMoniker": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\photonMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\photonMovement.cs",
+              "ToolTip": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\photonMovement.cs",
+              "RelativeToolTip": "Assets\\scripts\\photonMovement.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAYwF4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T00:01:47.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AtomMove.cs",
               "DocumentMoniker": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\AtomMove.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\AtomMove.cs",
               "ToolTip": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\AtomMove.cs",
               "RelativeToolTip": "Assets\\scripts\\AtomMove.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T06:44:20.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Electron_Circle.cs",
               "DocumentMoniker": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\Electron_Circle.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Electron_Circle.cs",
@@ -74,48 +91,49 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\SpawnAtom.cs",
               "ToolTip": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\SpawnAtom.cs",
               "RelativeToolTip": "Assets\\scripts\\SpawnAtom.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAzwAcAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T06:40:10.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "SpawnPhotons.cs",
               "DocumentMoniker": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\SpawnPhotons.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\SpawnPhotons.cs",
               "ToolTip": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\SpawnPhotons.cs",
               "RelativeToolTip": "Assets\\scripts\\SpawnPhotons.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAZAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAzwDUAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T06:12:07.638Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "SpawnElectrons.cs",
               "DocumentMoniker": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\SpawnElectrons.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\SpawnElectrons.cs",
               "ToolTip": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\SpawnElectrons.cs",
               "RelativeToolTip": "Assets\\scripts\\SpawnElectrons.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAQwIUAAAARAAAA",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAQwGsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T00:12:01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "AtomAbsorbPhoton.cs",
               "DocumentMoniker": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\AtomAbsorbPhoton.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\AtomAbsorbPhoton.cs",
               "ToolTip": "C:\\Users\\callu\\OneDrive\\Documents\\despondent-survival\\Laser-Simulation\\Assets\\scripts\\AtomAbsorbPhoton.cs",
               "RelativeToolTip": "Assets\\scripts\\AtomAbsorbPhoton.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAqwBwAAAA2AAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAowJ0AAABaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T00:04:29.006Z"
+              "WhenOpened": "2025-06-10T00:04:29.006Z",
+              "EditorCaption": ""
             }
           ]
         }
