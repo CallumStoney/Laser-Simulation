@@ -61,6 +61,7 @@
     <Compile Include="Assets\scripts\PercentageBox.cs" />
     <Compile Include="Assets\scripts\SpawnElectrons.cs" />
     <Compile Include="Assets\scripts\2D elements\2DSpawnElectrons.cs" />
+    <Compile Include="Assets\scripts\TurnOffMirrors.cs" />
     <Compile Include="Assets\scripts\SpawnPhotons.cs" />
     <Compile Include="Assets\ToDoList.cs" />
     <Compile Include="Assets\scripts\AtomAbsorbPhoton.cs" />
@@ -70,8 +71,11 @@
     <Compile Include="Assets\scripts\photonMovement.cs" />
     <Compile Include="Assets\scripts\SpawnAtom.cs" />
     <Compile Include="Assets\scripts\SliderColorChanger.cs" />
+    <Compile Include="Assets\scripts\AtomsBox.cs" />
     <Compile Include="Assets\scripts\Electron_Circle.cs" />
     <Compile Include="Assets\scripts\ChangePhotonTrail.cs" />
+    <Compile Include="Assets\scripts\TurnOffBody.cs" />
+    <Compile Include="Assets\scripts\AtomicNumberBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -1,21 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class ChangeTextColor : MonoBehaviour
 {
-    public Image fill;
+    public TextMeshProUGUI myText;
+    private Image image;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        // Get the Image component from the same GameObject this script is attached to
+        image = GetComponent<Image>();
+
+        if (image == null)
+        {
+            Debug.LogWarning("No Image component found on this GameObject.");
+        }
+        if (myText == null)
+        {
+            Debug.LogWarning("TextMeshProUGUI reference not assigned.");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (image != null && myText != null)
+        {
+            // Set the vertex color of the text to match the Image color
+            myText.color = image.color;
+        }
     }
 }
