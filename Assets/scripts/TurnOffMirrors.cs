@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TurnOffMirrors : MonoBehaviour
 {
     public GameObject mirrorBack;
+    public GameObject mirrorForward;
     public Toggle mirrorToggle;  // Assign this in the Inspector
 
     void Start()
@@ -14,6 +15,7 @@ public class TurnOffMirrors : MonoBehaviour
         {
             // Set initial state
             mirrorBack.SetActive(mirrorToggle.isOn);
+            mirrorForward.SetActive(mirrorToggle.isOn);
 
             // Add listener
             mirrorToggle.onValueChanged.AddListener(OnToggleChanged);
@@ -24,5 +26,8 @@ public class TurnOffMirrors : MonoBehaviour
     {
         if (mirrorBack != null)
             mirrorBack.SetActive(isOn);
+
+        if (mirrorForward != null)
+            mirrorForward.SetActive(isOn);
     }
 }

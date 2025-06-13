@@ -14,15 +14,19 @@ public class photonMovement : MonoBehaviour
     private Rigidbody rb;
     private static Slider frequencySlider;
 
-    private const float MAX_DISTANCE = 500f;
+    private const float MAX_DISTANCE = 1000f;
 
     private float timer = 0.05f;
     private float time = 0f;
     private bool canBeAbsorbed = false;
+    private bool canBeAbsorbedPer = true;
+
+    public Slider slider;
 
 
     void Start()
     {
+        slider = GameObject.Find("MirrorSlider").GetComponent<Slider>();
         // Cache Rigidbody reference
         rb = GetComponent<Rigidbody>();
 
@@ -48,6 +52,7 @@ public class photonMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
         // Keep photon moving (in case Rigidbody drag/friction slows it)
         rb.velocity = dir.normalized * SPEED * SPEED_MULTIPLIER;
 
@@ -93,10 +98,27 @@ public class photonMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Mirror"))
+        if (other.CompareTag("Mirror") && other.name == "BackMirror")
         {
-            dir = -dir;
+            dir = new Vector3(0,0,-1);
             canBeAbsorbed = false;
+        }
+        else if (other.CompareTag("Mirror") && other.name == "FrontMirror" && canBeAbsorbedPer)
+        {
+            // Assume slider is a reference to your UI Slider component
+            int randomValue = Random.Range(1, 101); // 1 to 100 inclusive
+
+            if (randomValue > slider.value)
+            {
+                canBeAbsorbedPer = false;
+                transform.position = new Vector3(0, 0, -275);
+                Debug.Log(transform.position);
+            }
+            else
+            {
+                dir = new Vector3(0, 0, 1);
+                canBeAbsorbed = false;
+            }
         }
     }
 }

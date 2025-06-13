@@ -73,17 +73,11 @@ public class ThreeDMovement : MonoBehaviour
             sprintSpeed = 20f;
         }
 
-        // Zoom
+        // Zoom (infinite)
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-
         if (scroll != 0f)
         {
-            scrollCount += scroll > 0 ? 1 : -1;
-
-            if (scrollCount < 5 && scrollCount > -5)
-            {
-                camera.transform.position += camera.transform.forward * scroll * zoomSpeed;
-            }
+            camera.transform.position += camera.transform.forward * scroll * zoomSpeed;
         }
     }
 }
